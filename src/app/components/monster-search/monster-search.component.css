@@ -23,6 +23,8 @@ div#form-container input {
     margin: 0;
     border-radius: 0;
     width: calc(100% - 64px);
+    background-color: rgb(22,31,43);
+    color: #d7d7d7;
 }
 
 div#form-container button {
@@ -33,4 +35,6 @@ div#form-container button {
     padding: 0;
     margin: 0;
     border-radius: 0;
+    background-color: rgb(22,31,43);
+    color: #d7d7d7;
 }

@@ -1,8 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-
 body {
     margin: 0;
     font-family: 'Merriweather', 'Inter', 'Arial', 'Helvetica', 'sans-serif';
+    color: #d7d7d7;
+    background-color: rgb(13, 19, 26);
 }
 
 a {
