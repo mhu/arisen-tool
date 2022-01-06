@@ -1,0 +1,34 @@
+<form (ngSubmit)="onSubmit()" #monsterSearchForm="ngForm">
+    <div id="form-container">
+        <input type="text" minlength="4" [(ngModel)]="monsterSearchInput" name="monsterSearchInput">
+        <button type="submit" class="btn btn-success" [disabled]="!monsterSearchForm.form.valid">Search</button>
+    </div>
+</form>
+
+<div *ngIf="isSubmitted && monsters.length === 0" style="text-align: center; margin-top: 8px;">
+    No results
+</div>
+
+<div *ngFor="let monster of monsters" class="monster-info">
+    <img src="{{ monster.image }}" alt="{{ monster.name }}">
+    <br>
+    {{ monster.name }}
+    <br>
+    <span *ngIf="monster.level">
+        Level {{ monster.level }}
+        <br>
+    </span>
+    Tier {{ monster.tier }}
+
+    <div style="margin-top: 1em; text-align: left;">
+        Debuffs
+        <ul *ngIf="!monster.debuffs || monster.debuffs.length === 0">
+            <li>none</li>
+        </ul>
+        <ul *ngIf="monster.debuffs">
+            <li *ngFor="let debuff of monster.debuffs">
+                {{ debuff }}
+            </li>
+        </ul>
+    </div>
+</div>

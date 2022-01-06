@@ -1,0 +1,36 @@
+div.monster-info {
+    border: 1px solid #2c2c2c;
+    padding: 8px;
+    max-width: 400px;
+    text-align: center;
+    margin: 8px auto;
+}
+
+div.monster-info > img {
+    max-width: 100px;
+}
+
+div#form-container {
+    width: 100%;
+    display: inline-block;
+}
+
+div#form-container input {
+    float: left;
+    height: 28px;
+    border: 1px solid #2c2c2c;
+    padding: 1px 2px;
+    margin: 0;
+    border-radius: 0;
+    width: calc(100% - 64px);
+}
+
+div#form-container button {
+    float: right;
+    height: 32px;
+    width: 55px;
+    border: 1px solid #2c2c2c;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
