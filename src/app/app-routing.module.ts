@@ -7,7 +7,7 @@ import { MonsterSearchComponent } from './components/monster-search/monster-sear
 const routes: Routes = [
   { path: 'monsters', component: MonsterSearchComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '**', redirectTo: 'monsters' }
+  { path: '**', redirectTo: 'monsters', pathMatch: 'full' }
 ];
 
 @NgModule({
