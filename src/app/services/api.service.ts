@@ -5,6 +5,11 @@ import { Observable, of, tap } from 'rxjs';
 import { Skill } from '../interfaces/skill.interface';
 import { Monster } from '../interfaces/monster.interface';
 
+interface Stat {
+  name: string;
+  value: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -40,6 +45,32 @@ export class ApiService {
           this.skillCache.push(skill);
         }
       })
+    );
+  }
+
+  searchItems(name: string): any {
+    return this.http.post(
+      `${this.API_URL}/item`,
+      {
+        icontains: [ // case-insensitive contains
+          { name }
+        ]
+      }
+    );
+  }
+
+  assessItem(id: number, stats: Stat[]): any {
+    const params: any = { id };
+
+    for (const stat of stats) {
+      const name = stat.name;
+      const value = stat.value;
+      params[name] = value;
+    }
+
+    return this.http.post(
+      `${this.API_URL}/assess`,
+      params
     );
   }
 

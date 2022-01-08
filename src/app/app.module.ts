@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MonsterSearchComponent } from './components/monster-search/monster-search.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ItemAssessComponent } from './components/item-assess/item-assess.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MonsterSearchComponent,
-    ContactComponent
+    ContactComponent,
+    ItemAssessComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+div#item-selection {
+    max-width: 400px;
+    margin: 8px auto;
+    text-align: center;
+}
+
+div#item-selection > button {
+    margin: 4px;
+}
+
+div#assess-container div:not(:first-child) {
+    margin-top: 8px;
+}
+
+div#assess-container input, div#assess-container label, div#assess-container select {
+    display: block;
+    width: 100%;
+}
+
+div#assess-container label {
+    margin-bottom: 4px;
+}

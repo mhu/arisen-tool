@@ -8,3 +8,52 @@ body {
 a {
     text-decoration: none;
 }
+
+button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px;
+    color: #d7d7d7;
+    background-color: rgb(13, 19, 26);
+    border: 1px solid #2c2c2c;
+}
+
+div.form-container {
+    width: 100%;
+    display: inline-block;
+}
+
+input, select {
+    height: 28px;
+    border: 1px solid #2c2c2c;
+    padding: 1px 2px;
+    margin: 0;
+    border-radius: 0;
+    background-color: rgb(22,31,43);
+    color: #d7d7d7;
+}
+
+div.form-container input {
+    float: left;
+    width: calc(100% - 64px);
+}
+
+div.form-container button {
+    float: right;
+    height: 32px;
+    width: 55px;
+    border: 1px solid #2c2c2c;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    background-color: rgb(22,31,43);
+    color: #d7d7d7;
+}
+
+div.info-box {
+    border: 1px solid #2c2c2c;
+    padding: 8px;
+    margin: 8px auto;
+    max-width: 400px;
+    text-align: center;
+}

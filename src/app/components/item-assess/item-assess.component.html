@@ -1,0 +1,68 @@
+<form (ngSubmit)="onSearchSubmit()" #itemSearchForm="ngForm">
+    <div class="form-container">
+        <input type="text" minlength="4" [(ngModel)]="itemSearchInput" name="itemSearchInput">
+        <button type="submit" [disabled]="!itemSearchForm.form.valid">Search</button>
+    </div>
+</form>
+
+<div *ngIf="isSubmitted && items.length === 0" style="text-align: center; margin-top: 8px;">
+    No results
+</div>
+
+<div id="item-selection">
+    <button *ngFor="let item of items" (click)="selectItem(item)">{{ item.name }}</button>
+</div>
+
+<div id="selected-item" *ngIf="selectedItem">
+    <div class="info-box">
+        <img src="https://orna.guide/static/orna/img/{{ selectedItem.image }}">
+        <br>
+        {{ selectedItem.name }}
+    </div>
+
+    <div *ngIf="itemValues && !searchError" id="assess-container" class="info-box">
+        <form (ngSubmit)="onAssessSubmit()" #itemAssessForm="ngForm">
+            <div>
+                <label for="level">Level</label>
+                <select [(ngModel)]="itemLevel" id="level" name="level">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">Masterforged</option>
+                    <option value="12">Demonforged</option>
+                    <option value="13">Godforged</option>
+                </select>
+            </div>
+
+            <div *ngFor="let stat of itemValues">
+                <label for="{{ stat.name }}">
+                    {{ capitalizeString(stat.name) }}
+                </label>
+                <input type="number" [(ngModel)]="stat.value" id="{{ stat.name }}" name="{{ stat.name }}">
+            </div>
+
+            <button type="submit" [disabled]="!itemAssessForm.form.valid" style="margin-top: 8px;">
+                Assess
+            </button>
+        </form>
+    </div>
+
+    <div *ngIf="itemQuality" style="text-align: center;">
+        Item Quality: {{ itemQuality }}%
+    </div>
+</div>
+
+<div *ngIf="searchError" style="text-align: center; margin-top: 8px;">
+    {{ searchError }}
+</div>
+
+<div *ngIf="assessError" style="text-align: center; margin-top: 8px;">
+    {{ assessError }}
+</div>

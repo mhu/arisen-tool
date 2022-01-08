@@ -1,5 +1,5 @@
 <form (ngSubmit)="onSubmit()" #monsterSearchForm="ngForm">
-    <div id="form-container">
+    <div class="form-container">
         <input type="text" minlength="4" [(ngModel)]="monsterSearchInput" name="monsterSearchInput">
         <button type="submit" class="btn btn-success" [disabled]="!monsterSearchForm.form.valid">Search</button>
     </div>
@@ -9,7 +9,7 @@
     No results
 </div>
 
-<div *ngFor="let monster of monsters" class="monster-info">
+<div *ngFor="let monster of monsters" class="info-box">
     <img src="{{ monster.image }}" alt="{{ monster.name }}">
     <br>
     {{ monster.name }}
