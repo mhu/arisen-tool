@@ -16,5 +16,5 @@ cp docs/index.html docs/404.html
 * Reduce minimum input to 3 characters? (Rat, Bat, Imp, Orc)
 * Reduce minimum input to 2 characters? (Zu)
 * ~~Dark mode~~
-* ~~Item Access tool~~
+* ~~Item Assess tool~~
 * ~~Fix 404 error when visiting /monsters directly~~
