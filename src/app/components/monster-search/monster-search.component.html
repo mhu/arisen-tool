@@ -20,7 +20,7 @@
     </span>
     Tier {{ monster.tier }}
 
-    <div style="margin-top: 1em; text-align: left;">
+    <div>
         Debuffs
         <ul *ngIf="!monster.debuffs || monster.debuffs.length === 0">
             <li>none</li>
@@ -30,5 +30,18 @@
                 {{ debuff }}
             </li>
         </ul>
+    </div>
+
+    <div *ngIf="monster.vulnerable_to_status">
+        Vulnerable to
+        <ul>
+            <li *ngFor="let vulnerability of monster.vulnerable_to_status">
+                {{ vulnerability }}
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="monster.canDispell">
+        Can dispell debuffs
     </div>
 </div>

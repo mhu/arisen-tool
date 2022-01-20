@@ -18,3 +18,5 @@ cp docs/index.html docs/404.html
 * ~~Dark mode~~
 * ~~Item Assess tool~~
 * ~~Fix 404 error when visiting /monsters directly~~
+* ~~Add monster vulnerability information~~
+* ~~Add monster dispel capabilities~~

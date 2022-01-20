@@ -1,3 +1,4 @@
-div.monster-info > img {
-    max-width: 100px;
+div.info-box > div {
+    margin-top: 1em;
+    text-align: left;
 }

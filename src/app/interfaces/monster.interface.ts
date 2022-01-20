@@ -1,13 +1,13 @@
 export interface Monster {
     boss: boolean;
     buffs?: any[];
+    canDispell?: boolean;
     debuffs?: string[];
     drops: any[];
     id: number;
     image: string;
     level?: number;
     name: string;
-    skillDetails?: any[];
     skills: any[];
     spawns?: string[];
     tier: number;
